@@ -34,7 +34,7 @@ Public Class ValidateNullable
     Public Sub New()
     End Sub
     Public Overrides Function Validate(Str As String) As String
-        If IsNothing(Str) OrElse IsNull(Str) Then Return Nothing
+        If IsNothing(Str) OrElse (String.IsNullOrEmpty(Str) AndAlso Not Str = "") Then Return Nothing
         Return ""
     End Function
 End Class
